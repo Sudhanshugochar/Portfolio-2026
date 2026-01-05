@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Journey from "@/components/Journey";
-import GitHubSection from "@/components/GitHubSection";
+import Technologies from "@/components/Technologies";
+import MLProjects from "@/components/MLProjects";
+import WebProjects from "@/components/WebProjects";
+import Experience from "@/components/Experience";
+import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -14,10 +15,11 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <Skills />
-      <Projects />
-      <Journey />
-      <GitHubSection />
+      <Technologies />
+      <MLProjects />
+      <WebProjects />
+      <Experience />
+      <Achievements />
       <Contact />
       <Footer />
     </div>

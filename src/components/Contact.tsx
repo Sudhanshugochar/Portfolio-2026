@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Send, Github, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -14,19 +14,18 @@ const socialLinks = [
     href: "https://github.com/Sudhanshugochar",
   },
   {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com",
-  },
-  {
-    icon: Twitter,
+    icon: () => (
+      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
     label: "X (Twitter)",
-    href: "https://twitter.com",
+    href: "https://x.com/GocharSudhanshu",
   },
   {
     icon: Mail,
     label: "Email",
-    href: "mailto:contact@example.com",
+    href: "mailto:sudhanshugocher11@gmail.com",
   },
 ];
 
@@ -132,9 +131,9 @@ const Contact = () => {
           >
             <div className="glass-card p-8 rounded-2xl">
               <h3 className="text-xl font-semibold mb-6">
-                Connect with me on social media
+                Connect with me
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
@@ -144,10 +143,15 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                    className="flex items-center gap-3 p-4 bg-secondary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-200 group"
+                    className="flex items-center gap-4 p-4 bg-secondary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-200 group"
                   >
                     <social.icon className="h-5 w-5" />
-                    <span className="font-medium">{social.label}</span>
+                    <div>
+                      <span className="font-medium block">{social.label}</span>
+                      <span className="text-xs text-muted-foreground group-hover:text-primary-foreground/80">
+                        {social.href.replace('mailto:', '').replace('https://', '')}
+                      </span>
+                    </div>
                   </motion.a>
                 ))}
               </div>
