@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Brain, Rocket, TrendingUp } from "lucide-react";
+import { GraduationCap, MapPin, Brain, Code, Rocket } from "lucide-react";
 
 const highlights = [
   {
     icon: Brain,
-    title: "Strong ML Fundamentals",
-    description: "Deep understanding of supervised and unsupervised learning algorithms",
+    title: "ML & Data Science",
+    description: "Building intelligent systems with real-world impact",
+  },
+  {
+    icon: Code,
+    title: "Full-Stack Development",
+    description: "Creating polished web experiences with modern technologies",
   },
   {
     icon: Rocket,
-    title: "Project-Based Learning",
-    description: "Building real-world applications to solve practical problems",
-  },
-  {
-    icon: TrendingUp,
-    title: "Consistent Growth Mindset",
-    description: "Committed to continuous learning and improvement every day",
+    title: "Project-Driven Learning",
+    description: "Learning by building and shipping real products",
   },
 ];
 
@@ -38,15 +38,28 @@ const About = () => {
             <h2 className="section-title">
               About <span className="gradient-text">Me</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              I am a passionate Machine Learning and Data Science learner currently focusing 
-              on core ML algorithms, data analysis, and real-world projects. I believe in 
-              learning by building and sharing my journey publicly.
+            
+            {/* Education Badge */}
+            <div className="flex flex-wrap gap-4 mb-6">
+              <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+                <GraduationCap className="h-4 w-4 text-primary" />
+                <span className="text-sm">B.Tech Computer Engineering (2023–2027)</span>
+              </div>
+              <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span className="text-sm">Wardha, Maharashtra</span>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              I'm a Computer Engineering student at Bajaj Institute of Technology with a deep passion 
+              for Machine Learning and Full-Stack Development. I believe in learning by building and 
+              sharing my journey publicly.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              My goal is to leverage data-driven insights to solve complex business problems 
-              and contribute to impactful projects. I'm constantly exploring new techniques 
-              and best practices in the field of artificial intelligence.
+              My focus is on creating intelligent systems that solve real business problems while 
+              delivering exceptional user experiences. From ML models that predict customer behavior 
+              to modern web dashboards, I strive to bridge the gap between data and design.
             </p>
           </motion.div>
 

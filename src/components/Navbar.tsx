@@ -5,9 +5,10 @@ import { Button } from "./ui/button";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Journey", href: "#journey" },
+  { name: "Technologies", href: "#technologies" },
+  { name: "ML Projects", href: "#ml-projects" },
+  { name: "Web Projects", href: "#web-projects" },
+  { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -48,7 +49,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -69,7 +70,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex lg:hidden items-center gap-2">
           <Button
             variant="ghost"
             size="icon"
@@ -95,7 +96,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-card mt-2 mx-4 rounded-xl overflow-hidden"
+            className="lg:hidden glass-card mt-2 mx-4 rounded-xl overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-4">
               {navLinks.map((link) => (
