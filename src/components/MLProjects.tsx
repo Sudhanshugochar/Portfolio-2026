@@ -57,18 +57,21 @@ const MLProjects = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="ml-projects" className="py-24 relative">
+    <section id="ml-projects" className="py-32 relative">
       <div className="section-container" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-6">
+          <motion.div 
+            className="inline-flex items-center gap-2 glass-card px-5 py-2.5 rounded-full mb-8"
+            style={{ transform: "none" }}
+          >
             <span className="w-2 h-2 rounded-full gradient-bg"></span>
             <span className="text-sm font-medium">Machine Learning</span>
-          </div>
+          </motion.div>
           <h2 className="section-title">
             ML <span className="gradient-text">Projects</span>
           </h2>
@@ -77,31 +80,31 @@ const MLProjects = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mlProjects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="project-card"
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="project-card group"
             >
               {/* Project Icon Header */}
-              <div className={`p-6 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+              <div className={`p-8 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20" />
-                <project.icon className="h-10 w-10 text-white relative z-10" />
+                <project.icon className="h-12 w-12 text-white relative z-10" />
                 
                 {/* Decorative Elements */}
-                <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-white/10 rounded-full" />
-                <div className="absolute -right-8 -bottom-8 w-28 h-28 bg-white/5 rounded-full" />
+                <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full transition-transform duration-500 group-hover:scale-150" />
+                <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-white/5 rounded-full transition-transform duration-700 group-hover:scale-150" />
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="font-semibold text-lg mb-3 group-hover:text-primary transition-colors line-clamp-2">
+              <div className="p-6 relative z-10">
+                <h3 className="font-display font-semibold text-lg mb-3 group-hover:text-primary transition-colors duration-300 line-clamp-2">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
+                <p className="text-muted-foreground text-sm mb-5 leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
 
@@ -110,7 +113,7 @@ const MLProjects = () => {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-secondary rounded-full text-xs font-medium text-secondary-foreground"
+                      className="px-3 py-1.5 bg-secondary/80 rounded-full text-xs font-medium text-secondary-foreground"
                     >
                       {tech}
                     </span>
@@ -121,7 +124,7 @@ const MLProjects = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="rounded-full w-full"
+                  className="rounded-full w-full magnetic-btn"
                   asChild
                 >
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
