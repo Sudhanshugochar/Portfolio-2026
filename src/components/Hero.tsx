@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Mail, FileText, Download } from "lucide-react";
+import { ArrowRight, Github, FileText } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Hero = () => {
@@ -103,22 +103,6 @@ const Hero = () => {
             </Button>
           </motion.div>
           
-          {/* Download resume secondary action */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="mt-6"
-          >
-            <a 
-              href="/Sudhanshu_Gochar_Resume.pdf" 
-              download="Sudhanshu_Gochar_Resume.pdf"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Download className="h-4 w-4" />
-              Download Resume
-            </a>
-          </motion.div>
         </div>
       </div>
 
