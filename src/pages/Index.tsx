@@ -8,10 +8,14 @@ import Experience from "@/components/Experience";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <CustomCursor />
+      <AnimatedBackground />
       <Navbar />
       <Hero />
       <About />

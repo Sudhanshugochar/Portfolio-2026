@@ -7,17 +7,17 @@ const highlights = [
   {
     icon: Brain,
     title: "ML & Data Science",
-    description: "Building intelligent systems with real-world impact",
+    description: "Turning raw data into actionable insights through intelligent algorithms",
   },
   {
     icon: Code,
     title: "Full-Stack Development",
-    description: "Creating polished web experiences with modern technologies",
+    description: "Crafting polished web experiences from concept to deployment",
   },
   {
     icon: Rocket,
     title: "Project-Driven Learning",
-    description: "Learning by building and shipping real products",
+    description: "Building real products, not just tutorials — learning by shipping",
   },
 ];
 
@@ -26,62 +26,80 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-32 relative">
       <div className="section-container">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="section-title">
+            <motion.h2 
+              className="section-title mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+            >
               About <span className="gradient-text">Me</span>
-            </h2>
+            </motion.h2>
             
             {/* Education Badge */}
-            <div className="flex flex-wrap gap-4 mb-6">
-              <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+            <div className="flex flex-wrap gap-3 mb-8">
+              <motion.div 
+                className="inline-flex items-center gap-2 glass-card px-4 py-2.5 rounded-full"
+                whileHover={{ scale: 1.02 }}
+                style={{ transform: "none" }}
+              >
                 <GraduationCap className="h-4 w-4 text-primary" />
-                <span className="text-sm">B.Tech Computer Engineering (2023–2027)</span>
-              </div>
-              <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+                <span className="text-sm font-medium">B.Tech Computer Engineering (2023–2027)</span>
+              </motion.div>
+              <motion.div 
+                className="inline-flex items-center gap-2 glass-card px-4 py-2.5 rounded-full"
+                whileHover={{ scale: 1.02 }}
+                style={{ transform: "none" }}
+              >
                 <MapPin className="h-4 w-4 text-primary" />
-                <span className="text-sm">Wardha, Maharashtra</span>
-              </div>
+                <span className="text-sm font-medium">Wardha, Maharashtra</span>
+              </motion.div>
             </div>
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              I'm a Computer Engineering student at Bajaj Institute of Technology with a deep passion 
-              for Machine Learning and Full-Stack Development. I believe in learning by building and 
-              sharing my journey publicly.
+              Hey! I'm a second-year Computer Engineering student at Bajaj Institute of Technology 
+              with a genuine curiosity for how machines learn. I spend most of my time exploring 
+              ML algorithms and building web apps that solve real problems.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              I believe the best way to learn is by building. Every project I create is an opportunity 
+              to push my boundaries — whether it's predicting customer churn or designing intuitive 
+              dashboards. I'm not just coding for the sake of it; I'm building things people can actually use.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              My focus is on creating intelligent systems that solve real business problems while 
-              delivering exceptional user experiences. From ML models that predict customer behavior 
-              to modern web dashboards, I strive to bridge the gap between data and design.
+              When I'm not debugging models or tweaking CSS, you'll find me on the Kabaddi field 
+              (yes, I captain our college team!) or exploring new tech through hackathons and 
+              open-source contributions.
             </p>
           </motion.div>
 
           {/* Highlight Cards */}
-          <div className="grid gap-6">
+          <div className="grid gap-5">
             {highlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: 60 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card p-6 rounded-2xl hover-glow group cursor-default"
+                transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                className="glass-card p-6 rounded-2xl gradient-border group"
               >
-                <div className="flex items-start gap-4">
-                  <div className="gradient-bg p-3 rounded-xl">
+                <div className="flex items-start gap-5">
+                  <div className="gradient-bg p-4 rounded-xl shrink-0">
                     <highlight.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors duration-300">
                       {highlight.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                       {highlight.description}
                     </p>
                   </div>
