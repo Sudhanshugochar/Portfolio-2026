@@ -1,73 +1,133 @@
-# Welcome to your Lovable project
+# Sudhanshu Gochar - Portfolio
 
-## Project info
+A modern, interactive portfolio website showcasing Machine Learning and Web Engineering projects, skills, and experience.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## About
 
-## How can I edit this code?
+This is a professional portfolio website built with modern web technologies, featuring:
 
-There are several ways of editing your application.
+- Machine Learning Projects
+- Web Development Projects
+- UI/UX Design Projects
+- Web Design Projects
+- Professional Experience
+- Technical Skills
+- Achievements
+- Contact Information
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Next generation frontend tooling
+- **React** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality React components
+- **Framer Motion** - Animation library
+- **React Router** - Client-side routing
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Prerequisites
 
-## Can I connect a custom domain to my Lovable project?
+- Node.js (v16 or higher)
+- npm or yarn
 
-Yes, you can!
+### Installation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+# Clone the repository
+git clone https://github.com/Sudhanshugochar/data-driven-insights.git
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# Navigate to the project directory
+cd data-driven-insights
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The application will open at `http://localhost:8080`
+
+## Development
+
+```sh
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linting
+npm run lint
+```
+
+## Deployment
+
+### Deploy to Vercel
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+```sh
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments on every push.
+
+### Build Output
+
+The production build is located in the `dist/` directory after running:
+
+```sh
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── ui/             # shadcn/ui components
+│   ├── About.tsx
+│   ├── Hero.tsx
+│   ├── MLProjects.tsx
+│   ├── WebProjects.tsx
+│   ├── Experience.tsx
+│   └── ...
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+## Features
+
+- ✨ Modern, responsive design
+- 🎨 Dark mode support
+- ⚡ Fast performance (Vite + SWC)
+- 🎬 Smooth animations
+- 📱 Mobile-friendly
+- ♿ Accessible components
+- 🔍 SEO optimized
+
+## License
+
+© 2025 Sudhanshu Gochar. All rights reserved.
+
+## Contact
+
+- **Email**: sudhanshugocher11@gmail.com
+- **GitHub**: [Sudhanshugochar](https://github.com/Sudhanshugochar)
+- **Twitter/X**: [@GocharSudhanshu](https://x.com/GocharSudhanshu)
